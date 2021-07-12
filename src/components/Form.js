@@ -41,6 +41,7 @@ export const Form = ({ handleAddAppoinment }) => {
     console.log(appoinment);
     handleAddAppoinment(appoinment);
     setError(false);
+    setAppoinment(initialState);
   };
 
   return (
