@@ -21,11 +21,17 @@ export const Form = () => {
     });
   };
 
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(appoinment);
+  };
+
   return (
     <>
       <h2>Create Appoinment</h2>
 
-      <form>
+      <form onSubmit={handleOnSubmit}>
         <label>Pet's Name</label>
         <input
           type='text'
