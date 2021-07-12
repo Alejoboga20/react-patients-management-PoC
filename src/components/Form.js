@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   pet: '',
@@ -35,6 +36,10 @@ export const Form = () => {
       setError(true);
       return;
     }
+
+    appoinment.id = uuidv4();
+    console.log(appoinment);
+    setError(false);
   };
 
   return (
