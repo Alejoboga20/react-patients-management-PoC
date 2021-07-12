@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 import PropTypes from 'prop-types';
+import useForm from './useForm';
 
 const initialState = {
   pet: '',
@@ -11,37 +11,12 @@ const initialState = {
 };
 
 export const Form = ({ handleAddAppoinment }) => {
-  const [appoinment, setAppoinment] = useState(initialState);
-  const [error, setError] = useState(false);
+  const [formValues, error, handleOnChange, handleOnSubmit] = useForm(
+    initialState,
+    handleAddAppoinment
+  );
 
-  const { pet, owner, date, time, symptoms } = appoinment;
-
-  const handleOnChange = (e) => {
-    setAppoinment({
-      ...appoinment,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-
-    if (
-      pet.trim() === '' ||
-      owner.trim() === '' ||
-      date.trim() === '' ||
-      time.trim() === '' ||
-      symptoms.trim() === ''
-    ) {
-      setError(true);
-      return;
-    }
-
-    appoinment.id = uuidv4();
-    handleAddAppoinment(appoinment);
-    setError(false);
-    setAppoinment(initialState);
-  };
+  const { pet, owner, date, time, symptoms } = formValues;
 
   return (
     <>
