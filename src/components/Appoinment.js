@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Appoinment = ({ appoinment, handleDeleteById }) => (
   <div className='cita'>
@@ -26,3 +27,8 @@ export const Appoinment = ({ appoinment, handleDeleteById }) => (
     </button>
   </div>
 );
+
+Appoinment.propTypes = {
+  appoinment: PropTypes.object.isRequired,
+  handleDeleteById: PropTypes.func.isRequired
+};

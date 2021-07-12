@@ -17,7 +17,7 @@ export const App = () => {
     } else {
       localStorage.setItem('appoinments', JSON.stringify([]));
     }
-  }, [appoinmentArray]);
+  }, [appoinmentArray, initialAppoinments]);
 
   const handleAddAppoinment = (appoinment) =>
     setAppoinmentArray([...appoinmentArray, appoinment]);
