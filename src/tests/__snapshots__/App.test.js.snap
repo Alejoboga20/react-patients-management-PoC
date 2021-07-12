@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Tests should match snaphot 1`] = `
+<div>
+  <h1>
+    Patients Manager
+  </h1>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="one-half column"
+      >
+        Array [
+          <h2>
+            Create Appoinment
+          </h2>,
+          <form
+            onSubmit={[Function]}
+          >
+            <label>
+              Pet's Name
+            </label>
+            <input
+              className="u-full-width"
+              name="pet"
+              onChange={[Function]}
+              placeholder="Pet's Name"
+              type="text"
+              value=""
+            />
+            <label>
+              Owner's Name
+            </label>
+            <input
+              className="u-full-width"
+              name="owner"
+              onChange={[Function]}
+              placeholder="Owner's Name"
+              type="text"
+              value=""
+            />
+            <label>
+              Date
+            </label>
+            <input
+              className="u-full-width"
+              name="date"
+              onChange={[Function]}
+              type="date"
+              value=""
+            />
+            <label>
+              Time
+            </label>
+            <input
+              className="u-full-width"
+              name="time"
+              onChange={[Function]}
+              type="time"
+              value=""
+            />
+            <label>
+              Symptoms
+            </label>
+            <textarea
+              className="u-full-width"
+              name="symptoms"
+              onChange={[Function]}
+              value=""
+            />
+            <button
+              className="u-full-width button-primary"
+              type="submit"
+            >
+              Add Appoinment
+            </button>
+          </form>,
+        ]
+      </div>
+      <div
+        className="one-half column"
+      >
+        <h2>
+          Add an Appoinment
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+`;
