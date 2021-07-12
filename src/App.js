@@ -26,7 +26,11 @@ export const App = () => {
             <Form handleAddAppoinment={handleAddAppoinment} />
           </div>
           <div className='one-half column'>
-            <h2>Manage your Appoinments</h2>
+            <h2>
+              {appoinmentArray.length
+                ? 'Manage your Appoinments'
+                : 'Add an Appoinment'}
+            </h2>
 
             {appoinmentArray.map((appoinment) => (
               <Appoinment
