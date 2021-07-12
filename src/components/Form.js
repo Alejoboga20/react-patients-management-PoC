@@ -10,6 +10,7 @@ const initialState = {
 
 export const Form = () => {
   const [appoinment, setAppoinment] = useState(initialState);
+  const [error, setError] = useState(false);
 
   const { pet, owner, date, time, symptoms } = appoinment;
 
@@ -24,12 +25,23 @@ export const Form = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    console.log(appoinment);
+    if (
+      pet.trim() === '' ||
+      owner.trim() === '' ||
+      date.trim() === '' ||
+      time.trim() === '' ||
+      symptoms.trim() === ''
+    ) {
+      setError(true);
+      return;
+    }
   };
 
   return (
     <>
       <h2>Create Appoinment</h2>
+
+      {error ? <p className='alerta-error'>All Fields are Mandatory</p> : null}
 
       <form onSubmit={handleOnSubmit}>
         <label>Pet's Name</label>
