@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Appoinment = ({ appoinment }) => (
+export const Appoinment = ({ appoinment, handleDeleteById }) => (
   <div className='cita'>
     <p>
       Pet: <span>{appoinment.pet}</span>
@@ -17,5 +17,12 @@ export const Appoinment = ({ appoinment }) => (
     <p>
       Symptoms: <span>{appoinment.symptoms}</span>
     </p>
+
+    <button
+      className='button eliminar u-full-width'
+      onClick={() => handleDeleteById(appoinment.id)}
+    >
+      Delete &times;
+    </button>
   </div>
 );

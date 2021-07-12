@@ -8,6 +8,14 @@ export const App = () => {
   const handleAddAppoinment = (appoinment) =>
     setAppoinmentArray([...appoinmentArray, appoinment]);
 
+  const handleDeleteById = (id) => {
+    const filteredAppoinments = appoinmentArray.filter(
+      (appoinment) => appoinment.id !== id
+    );
+
+    setAppoinmentArray(filteredAppoinments);
+  };
+
   return (
     <div>
       <h1>Patients Manager</h1>
@@ -21,7 +29,11 @@ export const App = () => {
             <h2>Manage your Appoinments</h2>
 
             {appoinmentArray.map((appoinment) => (
-              <Appoinment appoinment={appoinment} key={appoinment.id} />
+              <Appoinment
+                appoinment={appoinment}
+                key={appoinment.id}
+                handleDeleteById={handleDeleteById}
+              />
             ))}
           </div>
         </div>
