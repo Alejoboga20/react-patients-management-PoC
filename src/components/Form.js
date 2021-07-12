@@ -9,7 +9,7 @@ const initialState = {
   symptoms: ''
 };
 
-export const Form = () => {
+export const Form = ({ handleAddAppoinment }) => {
   const [appoinment, setAppoinment] = useState(initialState);
   const [error, setError] = useState(false);
 
@@ -39,6 +39,7 @@ export const Form = () => {
 
     appoinment.id = uuidv4();
     console.log(appoinment);
+    handleAddAppoinment(appoinment);
     setError(false);
   };
 
