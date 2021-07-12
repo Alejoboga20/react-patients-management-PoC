@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Appoinment } from './components/Appoinment';
 import { Form } from './components/Form';
 
 export const App = () => {
-  const [appoinmentArray, setAppoinmentArray] = useState([]);
+  let initialAppoinments = JSON.parse(localStorage.getItem('appoinments'));
+
+  if (!initialAppoinments) {
+    initialAppoinments = [];
+  }
+
+  const [appoinmentArray, setAppoinmentArray] = useState(initialAppoinments);
+
+  useEffect(() => {
+    if (initialAppoinments) {
+      localStorage.setItem('appoinments', JSON.stringify(appoinmentArray));
+    } else {
+      localStorage.setItem('appoinments', JSON.stringify([]));
+    }
+  }, [appoinmentArray]);
 
   const handleAddAppoinment = (appoinment) =>
     setAppoinmentArray([...appoinmentArray, appoinment]);
