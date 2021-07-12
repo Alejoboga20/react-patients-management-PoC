@@ -16,7 +16,6 @@ export const Form = ({ handleAddAppoinment }) => {
   const { pet, owner, date, time, symptoms } = appoinment;
 
   const handleOnChange = (e) => {
-    console.log(appoinment);
     setAppoinment({
       ...appoinment,
       [e.target.name]: e.target.value
@@ -38,7 +37,6 @@ export const Form = ({ handleAddAppoinment }) => {
     }
 
     appoinment.id = uuidv4();
-    console.log(appoinment);
     handleAddAppoinment(appoinment);
     setError(false);
     setAppoinment(initialState);

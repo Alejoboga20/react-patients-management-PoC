@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Appoinment } from './components/Appoinment';
 import { Form } from './components/Form';
 
 export const App = () => {
@@ -16,7 +17,13 @@ export const App = () => {
           <div className='one-half column'>
             <Form handleAddAppoinment={handleAddAppoinment} />
           </div>
-          <div className='one-half column'>2</div>
+          <div className='one-half column'>
+            <h2>Manage your Appoinments</h2>
+
+            {appoinmentArray.map((appoinment) => (
+              <Appoinment appoinment={appoinment} key={appoinment.id} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
